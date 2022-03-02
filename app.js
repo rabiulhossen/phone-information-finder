@@ -21,7 +21,7 @@ const showMobile = (phones) => {
             <div class="card-body">
                 <h5 class="card-title fw-bold">Model:${phone.phone_name}</h5>
                 <p class="card-text fw-bold">BRAND:${phone.brand}</p>
-                <a href="#" class="btn btn-success fw-bold">DETAILS</a>
+                <a href="#" class="btn btn-success fw-bold"onclick="details()">DETAILS</a>
             </div>
         </div>
         <div class="card border rounded col-md-4 m-3 pt-3 ps-5 shadow" style="width: 18rem;">
@@ -29,7 +29,7 @@ const showMobile = (phones) => {
             <div class="card-body">
                 <h5 class="card-title fw-bold">Model:${phone.phone_name}</h5>
                 <p class="card-text fw-bold">BRAND:${phone.brand}</p>
-                <a href="#" class="btn btn-success fw-bold">DETAILS</a>
+                <a href="#" class="btn btn-success fw-bold"onclick="details()">DETAILS</a>
             </div>
         </div>
         <div class="card border rounded col-md-4 m-3  pt-3 ps-5 shadow" style="width: 18rem;">
@@ -37,7 +37,7 @@ const showMobile = (phones) => {
             <div class="card-body">
                 <h5 class="card-title fw-bold">Model:${phone.phone_name}</h5>
                 <p class="card-text fw-bold">BRAND:${phone.brand}</p>
-                <a href="#" class="btn btn-success fw-bold">DETAILS</a>
+                <a href="#" class="btn btn-success fw-bold" onclick="details('${phone.slug}')">DETAILS</a>
             </div>
         </div>
     </div> 
@@ -46,4 +46,11 @@ const showMobile = (phones) => {
 
     }
 
+}
+
+const details = (info) => {
+    const detailsLink = ` https://openapi.programming-hero.com/api/phone/${info}`;
+    fetch(detailsLink)
+        .then(response => response.json())
+        .then(data => console.log(data));
 }
