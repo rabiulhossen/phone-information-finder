@@ -61,12 +61,24 @@ const showDetails = (info) => {
     
     <div class="card-body detail-container shadow-md ">
        
-       <p class ="para"> <span class="card-text fw-bold text-dark">Display size: </span>${info.mainFeatures.displaySize} </p>
+    <img src="${info.image}" alt="">
+       <p class ="para mt-2"> <span class="card-text fw-bold text-dark">Display size: </span>${info.mainFeatures.displaySize} </p>
        <p class ="para"> <span class="card-text fw-bold text-dark">Storage: </span>${info.mainFeatures.storage} </p>
        <p class ="para"> <span class="card-text fw-bold text-dark">ChipSet: </span>${info.mainFeatures.chipSet} </p>
        <p class ="para"> <span class="card-text fw-bold text-dark">Sensors: </span>${info.mainFeatures.sensors} </p>
        <p class ="para"> <span class="card-text fw-bold text-dark">Memory: </span>${info.mainFeatures.memory} </p>
        <p class ="para"> <span class="card-text fw-bold text-dark">releaseDate: </span>${info.mainFeatures.releaseDate} </p>
+       <hr>
+
+ 
+       <h2 class= "text-danger mt-4"> Others Information</h2>
+
+       <p class ="para"> <span class="card-text fw-bold text-dark">Wifi: </span>${info.others.WLAN} </p>
+       <p class ="para"> <span class="card-text fw-bold text-dark">Bluetooth: </span>${info.others.Bluetooth} </p>
+       <p class ="para"> <span class="card-text fw-bold text-dark">GPS: </span>${info.others.GPS} </p>
+       <p class ="para"> <span class="card-text fw-bold text-dark">NFC: </span>${info.others.NFC} </p>
+       <p class ="para"> <span class="card-text fw-bold text-dark">Radio: </span>${info.others.Radio} </p>
+       <p class ="para"> <span class="card-text fw-bold text-dark">USB: </span>${info.others.USB} </p>
     
      
     </div>
