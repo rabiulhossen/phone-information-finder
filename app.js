@@ -2,6 +2,7 @@ const allMobile = () => {
     const searchValue = document.getElementById("search-box").value;
 
 
+
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
 
 
@@ -16,13 +17,15 @@ const allMobile = () => {
 };
 
 const showMobile = (phones) => {
-
+    const parent = document.getElementById("list-container");
+    parent.innerHTML = "";
     for (const phone of phones) {
-        const parent = document.getElementById("list-container");
+
+
         const div = document.createElement('div');
         div.innerHTML = ` <div class="container">
     <div>
-        <div class="card border rounded col-md-4 m-3  pt-3 ps-5 shadow" style="width: 18rem;">
+        <div class="card border rounded col m-3  pt-3 ps-5 shadow" style="width: 18rem;">
             <img src="${phone.image}" class="card-img-top w-75" alt="...">
             <div class="card-body">
                 <h5 class="card-title fw-bold">Model:${phone.phone_name}</h5>
@@ -37,6 +40,7 @@ const showMobile = (phones) => {
 
     }
 }
+
 const details = (info) => {
     const detailsLink = ` https://openapi.programming-hero.com/api/phone/${info}`;
     fetch(detailsLink)
@@ -53,19 +57,17 @@ const details = (info) => {
 // detail info 
 
 const showDetails = (info) => {
-    const container = document.getElementById("details-container").innerHTML = `<div class="card" style="width: 18rem;">
+    const container = document.getElementById("details-container").innerHTML = `<div class="card m-auto" style="width: 18rem;">
     
     <div class="card-body detail-container shadow-md ">
        
        <p class ="para"> <span class="card-text fw-bold text-dark">Display size: </span>${info.mainFeatures.displaySize} </p>
        <p class ="para"> <span class="card-text fw-bold text-dark">Storage: </span>${info.mainFeatures.storage} </p>
        <p class ="para"> <span class="card-text fw-bold text-dark">ChipSet: </span>${info.mainFeatures.chipSet} </p>
-       <p class ="para"> <span class="card-text fw-bold text-dark">sensors: </span>${info.mainFeatures.sensors} </p>
+       <p class ="para"> <span class="card-text fw-bold text-dark">Sensors: </span>${info.mainFeatures.sensors} </p>
        <p class ="para"> <span class="card-text fw-bold text-dark">Memory: </span>${info.mainFeatures.memory} </p>
        <p class ="para"> <span class="card-text fw-bold text-dark">releaseDate: </span>${info.mainFeatures.releaseDate} </p>
-      
-       
-       
+    
      
     </div>
   </div>`;
