@@ -1,3 +1,27 @@
 * {
     font-family: 'Oswald', sans-serif;
 }
+
+.search-btn {
+    background-color: rgb(241, 117, 45);
+    color: white;
+    box-shadow: 2px;
+    border-radius: 5px;
+    outline: invert;
+    font-weight: 700;
+}
+
+
+/* mobile details  */
+
+.detail-container {
+    background-color: rgba(135, 243, 135, 0.801);
+    text-align: left;
+    color: white;
+    box-shadow: 10px;
+    border-radius: 8px;
+}
+
+.para {
+    color: rgba(248, 38, 185, 0.829);
+}
